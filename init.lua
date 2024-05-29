@@ -1,6 +1,6 @@
-require("options")
-require("keymaps")
-require("autocommands")
+require("core.options")
+require("core.keymaps")
+require("core.autocommands")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -15,4 +15,4 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({{import = "plugins"}, {import = "plugins.lsp"}})
+require("lazy").setup({{import = "plugins.general"}, {import = "plugins.language"}, {import = "plugins.ui"}})
